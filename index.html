@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+        <h1>🎵Music Player</h1>
+    </header>
+
+    <div class="player">
+
+        <!-- CENTER PANEL -->
+        <div class="center">
+            <audio id="audio"></audio>
+            <div class="song-info">
+                <h2 id="title">Song Title</h2>
+                <p id="artist">Artist Name</p>
+            </div>
+
+            <div class="progress-container" onclick="setProgress(event)">
+                <div id="progress"></div>
+            </div>
+
+            <div class="time">
+                <span id="currentTime">0:00</span>
+                <span id="duration">0:00</span>
+            </div>
+
+            <div class="controls">
+                <button onclick="prevSong()">⏮</button>
+                <button class="play" onclick="togglePlay()">▶</button>
+                <button onclick="nextSong()">⏭</button>
+            </div>
+
+            <div class="volume">
+                Volume <input type="range" min="0" max="1" step="0.01" onchange="setVolume(this.value)">
+            </div>
+
+            <div class="extra">
+                <button onclick="toggleShuffle()">Shuffle</button>
+                <button onclick="toggleRepeat()">Repeat</button>
+            </div>
+        </div>
+
+        <div class="right">
+            <h3>Playlist</h3>
+            <ul id="playlist"></ul>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
